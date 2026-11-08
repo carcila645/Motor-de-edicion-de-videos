@@ -1,59 +1,60 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8">
-<!-- Pieza «lista-escalonada» · Reels con Motion (kit gratis Viegas Estudio)
-     Una lista de 2-4 puntos en tarjetas de cristal que entran una detrás de otra, debajo de la barbilla, encima de tu vídeo.
-     Cada fila: entrada rápida desde la izquierda que frena suave (salidaExpo) con desenfoque de movimiento; el check se dibuja
-     con un rebote corto. Fondo transparente. Cambia los textos y los tiempos en «params» (tiempos en segundos desde que empieza la pieza). -->
+<!-- Ejemplo «lista-escalonada» · Motion Graphics Viegas. Una fila por idea, debajo de la anterior; la cámara baja con rebote suave.
+     Sacado del vídeo de YouTube «Carruseles animados con Claude Code» (Viegas Estudio, 22-10-2026).
+     Cambia textos, tarjetas (vid/…) y tiempos; la curva, el desenfoque y la cámara ya siguen la guía de estilo. -->
 <link rel="stylesheet" href="../motor/estilo.css">
-<link rel="stylesheet" href="../motor/temas/noche-azul.css">
+<link rel="stylesheet" href="ejemplos.css">
 <script src="../motor/motor.js"></script>
-<style>
-.tit{ position:absolute; font:600 44px var(--fuente); letter-spacing:-.02em; color:#fff; white-space:nowrap; text-shadow:0 4px 24px rgba(0,2,12,.8); }
-.tit em{ font-family:var(--serif); font-style:italic; font-weight:400; color:var(--brillo); }
-.fila{ position:absolute; display:flex; align-items:center; gap:26px; height:118px; padding:0 40px 0 26px; border-radius:30px; white-space:nowrap;
-  background:linear-gradient(180deg, rgba(20,30,58,.78), rgba(9,12,22,.72)); border:1px solid rgba(147,197,253,.22);
-  box-shadow:0 24px 60px rgba(0,2,12,.55), inset 0 1px 0 rgba(255,255,255,.08); backdrop-filter:blur(18px); }
-.n{ width:70px; height:70px; border-radius:22px; display:grid; place-items:center; flex:none; background:linear-gradient(180deg,#4C8FF8,#2F6FE0); box-shadow:0 0 30px rgba(59,130,246,.5); }
-.n svg{ width:40px; height:40px; }
-.fila b{ font:600 50px var(--fuente); letter-spacing:-.02em; color:#F5F7FA; }
-</style>
 </head><body>
-<script id="params" type="application/json">
-{
-  "formato": "9x16",
-  "duracion": 4.5,
-  "titulo": "Lo que hace <em>Claude</em>",
-  "puntos": ["Quita los silencios", "Pone los subtítulos", "Añade motion graphics"],
-  "tiempos": [0.35, 0.95, 1.55],
-  "y": 1130
-}
-</script>
-<script src="../motor/estilos.js"></script>
 <script>
-const { P, W, H } = EST;
-escena({ duracion: P.duracion, ancho: W, alto: H, fondo: 'transparente' }, (MG) => {
-  const { k, curvas: C } = MG;
-  const tit = MG.el(`<div class="tit">${P.titulo}</div>`);
-  const filas = P.puntos.map((txt) => {
-    const f = MG.el(`<div class="fila"><span class="n"><svg viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>${txt}</b></div>`);
-    const p = f.querySelector('path'), L = p.getTotalLength(); p.style.strokeDasharray = L; f.check = (x) => { p.style.strokeDashoffset = L * (1 - x); };
-    return f;
+escena({ duracion: 8.3, ancho: 1920, alto: 1080, fondo: 'marca' }, (MG) => {
+  // --- compatibilidad con las funciones del vídeo original (mismos nombres, sobre el motor) ---
+  const M = MG.mundo, V = MG.vista, DT = MG.DT, MB = MG.MB, SVGNS = 'http://www.w3.org/2000/svg';
+  const { k, lerp, cl, desenfoca, pon, camara: camara0 } = MG;
+  const C = MG.curvas, quint = C.salidaQuint, inOut = C.entradaSalidaQuint, suave = C.suave, back = (x) => C.atras(x), rebote = C.rebote, reboteSuave = C.reboteSuave;
+  const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h.trim(); return d.firstChild; };
+  const entra = (el, t, t0, d = .7, dx = 0, dy = 220, s0 = .94, base = 3, extra = 0) => MG.entra(el, t, t0, { d, dx, dy, escala0: s0, base, extra });
+  const camara = (t, z0, z1, ox = 960, oy = 540) => camara0(t, z0, z1, ox, oy);
+  const VID = (e, n) => `vid/${String(e).padStart(2, '0')}-${n}.mp4`;
+  const VIDS = { push: (o) => MG.registrar(o.v, o) };
+  function tarjeta(src, w, h, t0, off = .8, bucle = false) { return MG.tarjeta(src, w, h, t0, { desde: off, bucle: true }); }
+  function logoClaude(tam) {
+    const w = $(`<div class="abs" style="width:${tam}px;height:${tam}px"><div class="logo abs" style="width:100%;height:100%;filter:drop-shadow(0 0 40px rgba(var(--halo),.55))"></div><div class="barrido abs" style="width:100%;height:100%"></div></div>`);
+    w.barre = (x) => { w.children[1].style.backgroundPosition = `${lerp(110, -10, x)}% 0`; w.children[1].style.opacity = x > 0 && x < 1 ? 1 : 0; };
+    return w;
+  }
+  
+  let pinta = () => {}; let DUR = 8.3;
+  DUR = 8.3;
+  const filas = [[.62, 'Animados', 'Estilo Sistema', 1], [1.74, 'Con intención', 'Estilo Editorial', 3], [3.2, 'Jerarquía visual', 'Estilo Póster', 5],
+                 [5.45, 'Con sonido', 'Estilo Editor Pro', 6], [6.9, 'Y música', 'Estilo Tutorial', 9]];
+  const PASO = 330;
+  const els = filas.map(([t0, b, s, e], i) => {
+    const lbl = $(`<div class="lbl abs"><b>${b}</b><small>${s}</small></div>`); M.appendChild(lbl);
+    const cs = [1, 2, 3, 4, 5].map((n, j) => tarjeta(VID(e, n), 226, 282, t0 + .08 + j * .07, 1.0));
+    return {t0, lbl, cs, y: i * PASO};
   });
-  const x0 = 80, PASO = 146;
-  return (t) => {
-    const D = P.duracion, sale = C.entradaCubica(k(t, D - .45, D - .05));   // salida: fundido + desenfoque gaussiano suave hacia abajo
-    const et = MG.entra(tit, t, .1, { d: .5, dx: -60, dy: 0, escala0: 1, curva: 'salidaExpo' });
-    MG.pon(tit, x0 + 10 + et.x, P.y - 90 + sale * 30);
-    filas.forEach((f, i) => {
-      const t0 = P.tiempos[i] ?? (.35 + i * .6);
-      const e = MG.entra(f, t, t0, { d: .55, dx: -340, dy: 0, escala0: .96, curva: 'salidaExpo', base: 4 });
-      MG.pon(f, x0 + e.x, P.y + i * PASO + sale * 30, e.s);
-      f.check(C.rebote(k(t, t0 + .25, t0 + .7)));
-      const n = f.firstChild, s = C.rebote(k(t, t0 + .15, t0 + .65)); n.style.transform = `scale(${.5 + .5 * s})`;
+  const CY = (t) => { let cy = 0; els.forEach((f) => { cy = lerp(cy, f.y, reboteSuave(k(t, f.t0 - .2, f.t0 + .75))); }); return cy; };
+  pinta = (t) => {
+    const cy = CY(t), vcy = (cy - CY(t - DT)) / DT;
+    els.forEach((f) => {
+      const lejos = Math.min(1, Math.abs(f.y - cy) / PASO);
+      const e = entra(f.lbl, t, f.t0, .65, -240, 0);
+      pon(f.lbl, 150 + e.x, 380 + f.y - cy + e.y, e.s);
+      f.lbl.style.opacity = Math.min(1, e.p * 1.8) * lerp(1, .38, lejos);
+      f.cs.forEach((c, j) => {
+        const e2 = entra(c, t, f.t0 + .08 + j * .07, .7, 260, 0, .9);
+        pon(c, 640 + j * 248 + e2.x, 300 + f.y - cy, e2.s, `rotate(${(1 - e2.p) * 4}deg)`);
+        c.style.opacity = Math.min(1, e2.p * 1.8) * lerp(1, .38, lejos);
+      });
     });
-    if (sale > 0) [tit, ...filas].forEach((el) => { el.style.opacity = Math.min(+el.style.opacity || 1, 1 - sale); MG.desenfoca(el, 0, sale * 10); });
-    MG.camara(t, 1, 1.03, 540, 1300);
+    M.style.transformOrigin = '960px 540px';
+    M.style.transform = 'perspective(1800px) rotateX(6deg)';
+    desenfoca(M, 0, Math.abs(vcy) * MB * .6);
+    camara(t, 1.14, 1.0);   // zoom out constante
   };
+  return pinta;
 });
 </script>
 </body></html>
