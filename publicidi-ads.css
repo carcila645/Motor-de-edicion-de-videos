@@ -1,0 +1,31 @@
+/* Tema «publicidi-ads» (Imperio IA · Publicidi Ads): noche #05070D, rosa de alta conversión #CC3366, azul eléctrico de apoyo.
+   Es el mismo look de publicidads.com.co. Títulos en Space Grotesk; palabra clave (<em>) en rosa claro.
+   (Las fuentes se cargan de Google Fonts al renderizar; sin internet caen en Inter / Segoe UI / Consolas.)
+   Úsalo con: node scripts/render.mjs video todas --tema publicidi-ads */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=block');
+
+:root { --fondo:#05070D; --fondo-rgb:5,7,13; --rejilla:#121A2B; --halo:204,51,102; --acento:#CC3366; --acento2:#FF5C8A; --texto:#EDF2F9; --mute:#8A93A6;
+  --tarjeta:#101828; --tarjeta2:#0C1424; --superficie:#1B2440; --tinta:#0A0206; --claro:200,215,240; --sombra:0,0,0;
+  --azul:#2563EB; --brillo:#FF8AB0; --logo:#D97757;   /* el logo de Claude y la mascota no cambian de color */
+  --fuente:'Space Grotesk', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --mono:'Geist Mono', 'Cascadia Code', 'Consolas', monospace; }
+
+/* fondo: noche profunda con halo rosa desde abajo y un apoyo azul en lo alto */
+.mg-fondo-marca { background:
+  radial-gradient(60% 48% at 50% 112%, rgba(var(--halo), .32), rgba(var(--halo), .10) 45%, transparent 72%),
+  radial-gradient(45% 35% at 78% -8%, rgba(37,99,235,.18), transparent 70%),
+  linear-gradient(180deg, #04060C 0%, #05070D 55%, #080B16 100%); }
+
+/* tipografía */
+body { font-family: var(--fuente); }
+.mg-titulo { font-weight: 700; letter-spacing: -.02em; }
+.mg-titulo em, h1 em, h2 em, .titulo em { font-style: normal; color: var(--acento2); }
+.mg-sub { font-weight: 500; }
+.mg-chip { font-weight: 700; letter-spacing: .10em; color: #fff;
+  background: linear-gradient(180deg, #E24A7C, #CC3366); box-shadow: 0 0 28px rgba(var(--halo), .50), inset 0 1px 0 rgba(255,255,255,.22); }
+.mg-brillo { box-shadow: 0 0 0 2px var(--acento), 0 0 70px rgba(var(--halo), .55); }
+.mg-tarjeta { box-shadow: 0 26px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(200,215,240,.08); }
+.mg-cristal { background: linear-gradient(180deg, rgba(255,138,176,.12), rgba(255,138,176,.04)); border-color: rgba(255,138,176,.20); }
+
+/* el logo de Claude (máscara .logo de los ejemplos) siempre en su coral */
+.logo { background: var(--logo) !important; }

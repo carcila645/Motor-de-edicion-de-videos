@@ -1,0 +1,15 @@
+# dependencias y salidas
+node_modules/
+mcp-server/trabajo/
+**/resultados/
+**/__pycache__/
+*.log
+.DS_Store
+
+# --- Opción 3 de LICENCIA-Y-USO.md: publicar sin redistribuir el motor ---
+# Descomenta estas líneas si haces el repo PÚBLICO y no tienes licencia del motor.
+# Cada usuario pondrá su propia copia del motor y apuntará PACK_DIR a ella.
+# pack/skills/reels-imperio-ia/motor/
+# pack/skills/reels-imperio-ia/scripts/
+# pack/skills/reels-imperio-ia/ejemplos/
+# pack/skills/editar-reels-claude/

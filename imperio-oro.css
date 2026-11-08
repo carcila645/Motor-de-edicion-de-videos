@@ -1,0 +1,30 @@
+/* Tema «imperio-oro» (Imperio IA): noche #05070D con dorado premium #E8B24A. Variante "imperio" para aperturas y contenido de la comunidad.
+   Títulos en Space Grotesk; palabra clave (<em>) en dorado claro.
+   (Las fuentes se cargan de Google Fonts al renderizar; sin internet caen en Inter / Segoe UI / Consolas.)
+   Úsalo con: node scripts/render.mjs video todas --tema imperio-oro */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=block');
+
+:root { --fondo:#05070D; --fondo-rgb:5,7,13; --rejilla:#16130C; --halo:232,178,74; --acento:#E8B24A; --acento2:#F7D98A; --texto:#F4EFE6; --mute:#9A9282;
+  --tarjeta:#13110C; --tarjeta2:#0E0C08; --superficie:#2A2416; --tinta:#1A1204; --claro:255,238,200; --sombra:0,0,0;
+  --brillo:#F7D98A; --logo:#D97757;   /* el logo de Claude y la mascota no cambian de color */
+  --fuente:'Space Grotesk', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --mono:'Geist Mono', 'Cascadia Code', 'Consolas', monospace; }
+
+/* fondo: noche profunda con halo dorado desde abajo */
+.mg-fondo-marca { background:
+  radial-gradient(60% 48% at 50% 112%, rgba(var(--halo), .30), rgba(var(--halo), .09) 45%, transparent 72%),
+  linear-gradient(180deg, #04060C 0%, #05070D 55%, #0B0A08 100%); }
+
+/* tipografía */
+body { font-family: var(--fuente); }
+.mg-titulo { font-weight: 700; letter-spacing: -.02em; }
+.mg-titulo em, h1 em, h2 em, .titulo em { font-style: normal; color: var(--acento2); }
+.mg-sub { font-weight: 500; }
+.mg-chip { font-weight: 700; letter-spacing: .10em; color: #1A1204;
+  background: linear-gradient(180deg, #F2C766, #E8B24A); box-shadow: 0 0 28px rgba(var(--halo), .45), inset 0 1px 0 rgba(255,255,255,.30); }
+.mg-brillo { box-shadow: 0 0 0 2px var(--acento), 0 0 70px rgba(var(--halo), .50); }
+.mg-tarjeta { box-shadow: 0 26px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(255,238,200,.08); }
+.mg-cristal { background: linear-gradient(180deg, rgba(247,217,138,.12), rgba(247,217,138,.04)); border-color: rgba(247,217,138,.22); }
+
+/* el logo de Claude (máscara .logo de los ejemplos) siempre en su coral */
+.logo { background: var(--logo) !important; }

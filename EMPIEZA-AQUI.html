@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empieza aquí · Reels Imperio IA · Publicidi Ads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fondo:#05070D; --rejilla:#121A2B; --acento:#CC3366; --acento2:#FF5C8A;
+    --oro:#E8B24A; --azul:#2563EB; --texto:#EDF2F9; --mute:#8A93A6; --tarjeta:#101828; --borde:rgba(200,215,240,.10);
+    --fuente:'Space Grotesk','Inter',system-ui,sans-serif; --mono:'Geist Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--fondo);color:var(--texto);font-family:var(--fuente);line-height:1.5;
+    background-image:radial-gradient(55% 40% at 50% -5%, rgba(37,99,235,.14), transparent 70%),
+      radial-gradient(60% 50% at 50% 108%, rgba(204,51,102,.18), transparent 72%),
+      linear-gradient(var(--rejilla) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, var(--rejilla) 1px, transparent 1px) 0 0/40px 40px;}
+  .wrap{max-width:860px;margin:0 auto;padding:56px 24px 72px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 13px/1 var(--mono);letter-spacing:.14em;
+    text-transform:uppercase;color:var(--acento2);padding:8px 14px;border:1px solid var(--borde);border-radius:999px;background:var(--tarjeta)}
+  h1{font-size:clamp(34px,6vw,58px);font-weight:700;letter-spacing:-.02em;margin:22px 0 10px}
+  h1 em{font-style:normal;color:var(--acento)}
+  .lead{font-size:clamp(17px,2.4vw,21px);color:var(--mute);max-width:620px}
+  .brands{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 40px}
+  .pill{font:600 14px/1 var(--fuente);padding:10px 16px;border-radius:999px;border:1px solid var(--borde);background:var(--tarjeta)}
+  .pill b{color:var(--acento2)}
+  .pill.oro b{color:var(--oro)}
+  h2{font-size:22px;margin:40px 0 16px;letter-spacing:-.01em}
+  .steps{display:grid;gap:14px}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:var(--tarjeta);
+    border:1px solid var(--borde);border-radius:18px;padding:18px 20px}
+  .num{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:700;font-size:18px;
+    color:#fff;background:linear-gradient(180deg,var(--acento2),var(--acento));box-shadow:0 8px 24px rgba(204,51,102,.4)}
+  .step h3{font-size:17px;margin-bottom:4px}
+  .step p{color:var(--mute);font-size:15px}
+  code{font-family:var(--mono);font-size:.92em;background:#0b1120;border:1px solid var(--borde);border-radius:7px;padding:2px 7px;color:#cfe0ff}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .card{background:var(--tarjeta);border:1px solid var(--borde);border-radius:18px;padding:20px}
+  .card h3{font-size:16px;margin-bottom:8px;color:var(--acento2)}
+  .card.oro h3{color:var(--oro)}
+  .card ul{list-style:none;display:grid;gap:8px}
+  .card li{font-size:14px;color:var(--mute);padding-left:18px;position:relative}
+  .card li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--acento)}
+  .card.oro li::before{background:var(--oro)}
+  .swatches{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .sw{display:flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);color:var(--mute)}
+  .dot{width:20px;height:20px;border-radius:6px;border:1px solid var(--borde)}
+  .ask{background:#0b1120;border:1px solid var(--borde);border-radius:14px;padding:14px 16px;font-family:var(--mono);
+    font-size:13.5px;color:#cfe0ff;margin-top:10px}
+  footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--borde);color:var(--mute);font-size:13px}
+  footer a{color:var(--acento2);text-decoration:none}
+  @media(max-width:520px){.step{grid-template-columns:38px 1fr}.num{width:38px;height:38px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">● Herramienta de la comunidad</span>
+  <h1>Haz tus reels con <em>IA</em>, por código.</h1>
+  <p class="lead">Un pack de skills para Claude que crea motion graphics y edita reels con la marca de la comunidad, listos para publicar. Sin plantillas genéricas: todo sale con tu look.</p>
+
+  <div class="brands">
+    <span class="pill"><b>Imperio IA</b> · la comunidad</span>
+    <span class="pill oro"><b>Publicidi Ads</b> · el estudio</span>
+    <span class="pill">Motor · <b>Viegas Estudio</b></span>
+  </div>
+
+  <h2>Cómo empezar en 3 pasos</h2>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div>
+      <h3>Dale el pack a Claude</h3>
+      <p>Abre Claude Code y súbele este pack. Dile: «instala estas skills y prepara el equipo». Él copia las skills y comprueba lo que falta (pidiendo permiso).</p></div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Pide tu reel</h3>
+      <p>Mete tu toma (o tu idea) en una carpeta y pídelo:</p>
+      <div class="ask">«Edita mi vídeo con editar-reels-claude y reels-imperio-ia, con la marca de la comunidad, y hazme 3 versiones.»</div></div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Revisa y publica</h3>
+      <p>Compara versiones en invideo Editor con <code>revisar-en-invideo</code>, corrige diciendo versión + segundo + qué cambiar, y exporta en 1080p60 para redes o 4K60 final.</p></div></div>
+  </div>
+
+  <h2>Qué incluye</h2>
+  <div class="grid2">
+    <div class="card"><h3>Edita reels a cámara</h3>
+      <ul><li>Quita silencios y falsos inicios</li><li>Subtítulos grandes, palabra clave en el acento</li><li>Zoom suave, CTA y rótulos</li><li>Exporta a −14 LUFS</li></ul></div>
+    <div class="card"><h3>Motion graphics 2D/3D</h3>
+      <ul><li>Intros, logos, listas, gráficas, chats</li><li>3D real con three.js (teléfono, titular, red)</li><li>Cámara que nunca se para, rebote natural</li><li>26 plantillas por nicho + recetas de la comunidad</li></ul></div>
+    <div class="card oro"><h3>Tu marca, ya puesta</h3>
+      <ul><li>Tema <b>publicidi-ads</b> (rosa, por defecto)</li><li>Tema <b>imperio-oro</b> (dorado premium)</li><li>Cambia 1 archivo para afinar colores</li><li>Pon tu logo y listo</li></ul></div>
+  </div>
+
+  <h2>La paleta</h2>
+  <div class="swatches">
+    <span class="sw"><span class="dot" style="background:#05070D"></span>#05070D fondo</span>
+    <span class="sw"><span class="dot" style="background:#CC3366"></span>#CC3366 acento</span>
+    <span class="sw"><span class="dot" style="background:#FF5C8A"></span>#FF5C8A clave</span>
+    <span class="sw"><span class="dot" style="background:#2563EB"></span>#2563EB apoyo</span>
+    <span class="sw"><span class="dot" style="background:#E8B24A"></span>#E8B24A oro</span>
+    <span class="sw"><span class="dot" style="background:#EDF2F9"></span>#EDF2F9 texto</span>
+  </div>
+
+  <footer>
+    <b>Imperio IA</b> · skool.com/imperio-ia-5962 &nbsp;·&nbsp; <b>Publicidi Ads</b> · <a href="https://publicidads.com.co">publicidads.com.co</a><br>
+    Motor de animación y edición: kit de Viegas Estudio (ver CREDITOS.md). Logos del pack son marcadores de posición: cámbialos por tu logo real.
+  </footer>
+</div>
+</body>
+</html>

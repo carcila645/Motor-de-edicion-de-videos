@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160" role="img" aria-label="Publicidi Ads">
+  <defs>
+    <linearGradient id="pa-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF5C8A"/>
+      <stop offset="1" stop-color="#CC3366"/>
+    </linearGradient>
+  </defs>
+  <!-- marca de "play / reproducir" en burbuja (original) -->
+  <g>
+    <rect x="40" y="40" width="96" height="80" rx="20" fill="url(#pa-g)"/>
+    <path d="M76 64 L104 80 L76 96 Z" fill="#05070D"/>
+  </g>
+  <text x="156" y="76" font-family="'Space Grotesk','Inter',system-ui,sans-serif" font-size="52" font-weight="700" fill="#EDF2F9" letter-spacing="-1">Publicidi</text>
+  <text x="156" y="128" font-family="'Space Grotesk','Inter',system-ui,sans-serif" font-size="52" font-weight="700" fill="url(#pa-g)" letter-spacing="1">Ads</text>
+</svg>

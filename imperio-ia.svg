@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" width="560" height="160" role="img" aria-label="Imperio IA">
+  <defs>
+    <linearGradient id="imp-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7D98A"/>
+      <stop offset="1" stop-color="#E8B24A"/>
+    </linearGradient>
+  </defs>
+  <!-- corona minimal (original) -->
+  <g fill="url(#imp-g)">
+    <path d="M70 44 L90 78 L112 40 L134 78 L154 44 L150 108 L74 108 Z"/>
+    <rect x="74" y="114" width="80" height="10" rx="5"/>
+  </g>
+  <text x="178" y="76" font-family="'Space Grotesk','Inter',system-ui,sans-serif" font-size="56" font-weight="700" fill="#EDF2F9" letter-spacing="-1">Imperio</text>
+  <text x="178" y="128" font-family="'Space Grotesk','Inter',system-ui,sans-serif" font-size="56" font-weight="700" fill="url(#imp-g)" letter-spacing="2">IA</text>
+</svg>
